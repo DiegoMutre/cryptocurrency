@@ -27,7 +27,7 @@ const FormButton = styled.button`
     }
 `;
 
-const Form = ({ setQuotationResult, setAvailable }) => {
+const Form = ({ setQuotationResult, setIsAvailable }) => {
     // Array for useCurrency custom hook
     const countriesCurrency = [
         { id: "USD", country: "American Dollar" },
@@ -91,7 +91,7 @@ const Form = ({ setQuotationResult, setAvailable }) => {
 
         setError(false);
         assignQuotation();
-        setAvailable(true);
+        setIsAvailable(true);
     };
 
     return (

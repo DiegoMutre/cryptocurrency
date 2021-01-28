@@ -41,15 +41,15 @@ const QuoteHeading = styled.h1`
 function App() {
     // State for quotationResult
     const [quotationResult, setQuotationResult] = useState({});
-    const [available, setAvailable] = useState(false);
+    const [isAvailable, setIsAvailable] = useState(false);
     const [showSpinner, setShowSpinner] = useState(false);
 
     // Show the spinner when is available
     useEffect(() => {
-        if (available) {
+        if (isAvailable) {
             setShowSpinner(true);
         }
-    }, [available]);
+    }, [isAvailable]);
 
     return (
         <GridContainer>
@@ -60,7 +60,7 @@ function App() {
                 <QuoteHeading>Quote cryptocurrencies instantly</QuoteHeading>
                 <Form
                     setQuotationResult={setQuotationResult}
-                    setAvailable={setAvailable}
+                    setIsAvailable={setIsAvailable}
                 />
                 {showSpinner && !Object.keys(quotationResult).length && (
                     <Spinner />
